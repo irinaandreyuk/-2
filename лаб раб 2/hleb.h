@@ -10,4 +10,6 @@ public:
 	~hleb();
 	void setTip(string);
 	string getTip(void);
+	void show();
+	void toConsole();
 };

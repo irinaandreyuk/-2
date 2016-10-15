@@ -12,10 +12,20 @@ int eda::getkkal(void)
 }
 eda::eda()
 {
-	cout << "Конструктор еды\n";
+	//cout << "Конструктор еды\n";
 
 }
 eda::~eda()
 {
-	cout << "Деструктор еды\n";
+	//cout << "Деструктор еды\n";
+}
+void eda::show()
+{
+	cout << "калории " << this->getkkal() << endl; 
+
+}
+void eda::toConsole()
+{
+	cout << typeid(this).name() << endl;
+	this->show();
 }

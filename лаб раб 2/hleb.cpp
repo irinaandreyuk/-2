@@ -12,10 +12,21 @@ string hleb::getTip(void)
 }
 hleb::hleb()
 {
-	cout << "Конструктор хлеба\n";
+//	cout << "Конструктор хлеба\n";
 
 }
 hleb::~hleb()
 {
-	cout << "Деструктор хлеба\n";
+//	cout << "Деструктор хлеба\n";
+}
+void hleb::show()
+{
+	cout << "калории еды " << this->getkkal() << endl;
+	cout << "тип хлеба " << this->getTip() << endl;
+
+}
+void hleb::toConsole()
+{
+	cout << typeid(this).name() << endl;
+	this->show();
 }

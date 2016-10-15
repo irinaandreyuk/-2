@@ -12,12 +12,12 @@ int ovoshi::getTsena(void)
 }
 ovoshi::ovoshi()
 {
-	cout << "Конструктор овощей\n";
+	//cout << "Конструктор овощей\n";
 
 }
 ovoshi::~ovoshi()
 {
-	cout << "Деструктор овощей\n";
+//	cout << "Деструктор овощей\n";
 }
 void ovoshi::luck::setKolich(int u)
 {
@@ -29,10 +29,38 @@ int ovoshi::luck::getKolich(void)
 }
 ovoshi::luck::luck()
 {
-	cout << "Конструктор вложенного лука\n";
+	//cout << "Конструктор вложенного лука\n";
 
 }
 ovoshi::luck::~luck()
 {
-	cout << "Деструктор вложенного лука\n";
+//	cout << "Деструктор вложенного лука\n";
+}
+bool ovoshi::isLuck()
+{
+	return this->l.getKolich() > 0;
+}
+ovoshi ovoshi::luck::vegetable()
+{
+	ovoshi o;
+	o.setkkal(20);
+	o.setTsena(5000);
+	cout << "цена овощей: " << o.getTsena() << endl;
+	cout << "калории еды: " << o.getkkal() << endl;
+	return o;
+}
+void ovoshi::show()
+{
+	cout << "калории еды" << this->getkkal() << endl;
+	cout << "цена овощей " << this->getTsena() << endl;
+}
+ovoshi::ovoshi(const ovoshi& g)
+{
+	(dynamic_cast<eda*> (this))->setkkal(const_cast<ovoshi*>(&g)->getkkal());
+	this->setTsena((const_cast<ovoshi*>(&g))->getTsena());
+}
+void ovoshi::toConsole()
+{
+	cout << typeid(this).name() << endl;
+	this->show();
 }

@@ -13,9 +13,14 @@ public:
 		~luck();
 		void setKolich(int);
 		int getKolich(void);
+		static ovoshi vegetable();
 	}l;
 	ovoshi();
 	~ovoshi();
+	ovoshi(const ovoshi&);
 	void setTsena(int);
 	int getTsena(void);
+	bool isLuck();
+	void show();
+	void toConsole();
 };
